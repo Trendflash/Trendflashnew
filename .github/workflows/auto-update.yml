@@ -1,0 +1,33 @@
+name: Auto Update TrendFlash
+
+on:
+  schedule:
+    - cron: '0 0 * * *'   # 毎日0時に自動実行
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install OpenAI
+        run: pip install openai
+
+      - name: Generate articles
+        run: python generate_articles.py
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Commit and push
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "TrendFlash Bot"
+          git add .
+          git commit -m "Auto update articles [skip ci]" || echo "No changes"
+          git push
