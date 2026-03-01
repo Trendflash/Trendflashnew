@@ -1,0 +1,64 @@
+﻿/* TrendFlash全体 */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #F3F3F3;
+  color: #111;
+  margin: 0;
+  padding: 0;
+}
+
+/* ヘッダー・ファーストビュー */
+.hero {
+  background-color: #0078D7;
+  color: #fff;
+  padding: 40px 20px 20px 20px;
+  text-align: center;
+}
+.hero h1 { font-size: 2.5em; margin-bottom: 10px; }
+.hero .subtitle { font-size: 1.2em; margin-bottom: 20px; }
+
+/* 記事画像エリア */
+.articles-hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.articles-hero .article { width: 140px; text-align: center; }
+.articles-hero img { width: 100%; border-radius: 5px; }
+
+/* 天気アイコン */
+.weather {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.weather img { width: 32px; height: 32px; }
+
+/* コンテナ記事一覧 */
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+/* リンク */
+a {
+  color: #0078D7;
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* フッター */
+footer {
+  text-align: center;
+  padding: 10px;
+  color: #555;
+  font-size: 0.9em;
+}
